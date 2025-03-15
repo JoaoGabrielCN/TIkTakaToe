@@ -1,1 +1,1 @@
-Jogo da velha (ou TikTakaToe em ingles) feito utilizando C++ e programação orientada a objetos.
+Jogo da velha (ou TikTakaToe, em inglês) feito utilizando C++ e programação orientada a objetos.
