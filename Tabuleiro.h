@@ -19,6 +19,7 @@ public:
 	void atualiza(char letra);
 	bool verifica();
 	bool verificaVelha();
+	bool gameOver(char letra);
 };
 
 #endif /* TABULEIRO_H_ */

@@ -15,8 +15,8 @@ Tabuleiro::Tabuleiro() {
 	}
 }
 
-
 void Tabuleiro::exibe() {
+	cout << endl;
 	for (int i = 0; i < 3; ++i) {
 		for (int j = 0; j < 3; ++j) {
 			cout << tab[i][j];
@@ -106,20 +106,37 @@ bool Tabuleiro::verifica() {
 	}
 	return false;
 
-
 }
 
 bool Tabuleiro::verificaVelha() {
-		int cont = 0;
-		for (int i = 0; i < 3; ++i) {
-			for (int j = 0; j < 3; ++j) {
-				if (tab[i][j] == 'X' || tab[i][j] == 'O') cont++;
-			}
+	int cont = 0;
+	for (int i = 0; i < 3; ++i) {
+		for (int j = 0; j < 3; ++j) {
+			if (tab[i][j] == 'X' || tab[i][j] == 'O')
+				cont++;
 		}
+	}
 
-		if(cont == 9){
+	if (cont == 9) {
+		return true;
+	}
+
+	return false;
+}
+
+bool Tabuleiro::gameOver(char letra) {
+	letra = (letra == 'O') ? 'X' : 'O';
+
+	if (verifica() || verificaVelha()) {
+		if (verifica()) {
+			exibe();
+			cout << "O jogador " << letra << " ganhou!" << endl;
+			return true;
+		} else {
+			cout << "Deu velha!" << endl;
 			return true;
 		}
+	}
+	return false;
 
-		return false;
 }

@@ -6,35 +6,22 @@
  */
 
 #include <iostream>
-#include <cstdlib>
 #include "Tabuleiro.h"
 
 using namespace std;
 
-
 int main(int argc, char **argv) {
 	char letra = 'O';
-
 	Tabuleiro tab;
 
-
-
-	while (!tab.verifica() && !tab.verificaVelha()) {
+	while (!tab.gameOver(letra)) {
 		tab.exibe();
 		tab.atualiza(letra);
 
 		letra = (letra == 'O') ? 'X' : 'O';
 
-
 	}
 
-	letra = (letra == 'O') ? 'X' : 'O';
-
-	if (tab.verifica()) {
-		tab.exibe();
-		cout << "O jogador " << letra << " ganhou!" << endl;
-	}else{
-		cout<<"Deu velha!"<<endl;
-	}
+	return 0;
 }
 
